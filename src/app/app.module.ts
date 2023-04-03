@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FirstComponentComponent } from './components/first-component/first-component.component';
-import { ParentDataComponent } from './components/parent-data/parent-data.component';
-import { DirectivesComponent } from './components/directives/directives.component';
-import { IfElseComponent } from './components/if-else/if-else.component';
-import { EventsComponent } from './components/events/events.component';
-import { EmitterComponent } from './components/emitter/emitter.component';
 import { ChangeNumberComponent } from './components/change-number/change-number.component';
+import { DirectivesComponent } from './components/directives/directives.component';
+import { EmitterComponent } from './components/emitter/emitter.component';
+import { EventsComponent } from './components/events/events.component';
+import { FirstComponentComponent } from './components/first-component/first-component.component';
+import { IfElseComponent } from './components/if-else/if-else.component';
 import { ListRenderComponent } from './components/list-render/list-render.component';
+import { ParentDataComponent } from './components/parent-data/parent-data.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { TwoWayBindingComponent } from './components/two-way-binding/two-way-binding.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { PipesComponent } from './components/pipes/pipes.component';
     EmitterComponent,
     ChangeNumberComponent,
     ListRenderComponent,
-    PipesComponent
+    PipesComponent,
+    TwoWayBindingComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
