@@ -1,0 +1,11 @@
+<div class="card">
+    <h6>Animais: </h6>
+    <ul>
+        <li *ngFor="let animal of animals">
+            Nome: {{animal.name}} -
+            Tipo: {{animal.type}} - 
+            <button (click)="showAge(animal)">Shwo age</button>
+        </li>
+    </ul>
+    {{animalDetails}}
+</div>
