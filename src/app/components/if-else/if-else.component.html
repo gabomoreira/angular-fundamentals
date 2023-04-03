@@ -1,0 +1,12 @@
+<div class="card">
+    <div *ngIf="canShow; else canShowFalse">Estamos mostrando isso porque foi permitido</div>
+    <ng-template #canShowFalse>
+        <div>Estamos mostrando isso porque não foi permitido</div>
+    </ng-template>
+    <div *ngIf="name === 'gabo'; else nameNotFound" >O nome é "gabo"</div>
+    <ng-template #nameNotFound>
+        <div>
+            Nome não encontrado
+        </div>
+    </ng-template>
+</div>
