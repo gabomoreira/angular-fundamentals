@@ -1,16 +1,28 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Animal } from '../types/Animal';
+
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListService {
+  private apiUrl = 'http://localhost:3000/animals'
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  remove(animals: Animal[], animal: Animal) {
-    console.log('Ativando o service remove')
+  remove(id: number) {
+    return this.http.delete<Animal>(`${this.apiUrl}/${id}`)
+  }
 
-    return animals.filter(ani => ani.name !== animal.name)
+  getAll(): Observable<Animal[]> {
+    return this.http.get<Animal[]>(this.apiUrl);
+  }
+
+  getAnimal(id: number): Observable<Animal> {
+    return this.http.get<Animal>(`${this.apiUrl}/${id}`)
   }
 }
